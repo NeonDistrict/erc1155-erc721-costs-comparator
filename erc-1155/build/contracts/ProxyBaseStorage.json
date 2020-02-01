@@ -1,0 +1,435 @@
+{
+  "contractName": "ProxyBaseStorage",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "bytes4"
+        }
+      ],
+      "name": "delegates",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.0+commit.1d4f565a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"bytes4\"}],\"name\":\"delegates\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{},\"notice\":\"////////////////////////////////////////////////////////////////////////////////////////////////\"}},\"settings\":{\"compilationTarget\":{\"/Users/rbenheidorn/Documents/NeonDistrict/erc1155-airdropper/erc-1155/contracts/ProxyReceiver/ProxyBaseStorage.sol\":\"ProxyBaseStorage\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/rbenheidorn/Documents/NeonDistrict/erc1155-airdropper/erc-1155/contracts/ProxyReceiver/ProxyBaseStorage.sol\":{\"keccak256\":\"0xdae495dcda32d7e1bdb41a921f19e21e846a201ff7c4179354f3457a90743cec\",\"urls\":[\"bzzr://15e2da0e06630bcec340c3d0e8bbdba56914c9a1d930ebcee2e52c932ccf835f\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061013f806100206000396000f3fe608060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063a0a2daf014610046575b600080fd5b34801561005257600080fd5b5061009e6004803603602081101561006957600080fd5b8101908080357bffffffffffffffffffffffffffffffffffffffffffffffffffffffff191690602001909291905050506100e0565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b60006020528060005260406000206000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea165627a7a72305820644c5b5c878316363cf85f5c653adcb16ed643ad080514f81b7dfecad90380800029",
+  "deployedBytecode": "0x608060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063a0a2daf014610046575b600080fd5b34801561005257600080fd5b5061009e6004803603602081101561006957600080fd5b8101908080357bffffffffffffffffffffffffffffffffffffffffffffffffffffffff191690602001909291905050506100e0565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b60006020528060005260406000206000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea165627a7a72305820644c5b5c878316363cf85f5c653adcb16ed643ad080514f81b7dfecad90380800029",
+  "sourceMap": "315:780:17:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;315:780:17;;;;;;;",
+  "deployedSourceMap": "315:780:17:-;;;;;;;;;;;;;;;;;;;;;;;;560:43;;8:9:-1;5:2;;;30:1;27;20:12;5:2;560:43:17;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;560:43:17;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.5.0;\n\n///////////////////////////////////////////////////////////////////////////////////////////////////\n/**\n * @title ProxyBaseStorage\n * @dev Defining base storage for the proxy contract.\n */\n///////////////////////////////////////////////////////////////////////////////////////////////////\n\ncontract ProxyBaseStorage {\n\n    //////////////////////////////////////////// VARS /////////////////////////////////////////////\n\n    // maps functions to the delegate contracts that execute the functions.\n    // funcId => delegate contract\n    mapping(bytes4 => address) public delegates;\n\n    // array of function signatures supported by the contract.\n    bytes[] internal funcSignatures;\n\n    // maps each function signature to its position in the funcSignatures array.\n    // signature => index+1\n    mapping(bytes => uint256) internal funcSignatureToIndex;\n\n    // proxy address of itself, can be used for cross-delegate calls but also safety checking.\n    address proxy;\n\n    ///////////////////////////////////////////////////////////////////////////////////////////////\n\n}\n",
+  "sourcePath": "/Users/rbenheidorn/Documents/NeonDistrict/erc1155-airdropper/erc-1155/contracts/ProxyReceiver/ProxyBaseStorage.sol",
+  "ast": {
+    "absolutePath": "/Users/rbenheidorn/Documents/NeonDistrict/erc1155-airdropper/erc-1155/contracts/ProxyReceiver/ProxyBaseStorage.sol",
+    "exportedSymbols": {
+      "ProxyBaseStorage": [
+        2518
+      ]
+    },
+    "id": 2519,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2504,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:17"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "////////////////////////////////////////////////////////////////////////////////////////////////",
+        "fullyImplemented": true,
+        "id": 2518,
+        "linearizedBaseContracts": [
+          2518
+        ],
+        "name": "ProxyBaseStorage",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 2508,
+            "name": "delegates",
+            "nodeType": "VariableDeclaration",
+            "scope": 2518,
+            "src": "560:43:17",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_bytes4_$_t_address_$",
+              "typeString": "mapping(bytes4 => address)"
+            },
+            "typeName": {
+              "id": 2507,
+              "keyType": {
+                "id": 2505,
+                "name": "bytes4",
+                "nodeType": "ElementaryTypeName",
+                "src": "568:6:17",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes4",
+                  "typeString": "bytes4"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "560:26:17",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_bytes4_$_t_address_$",
+                "typeString": "mapping(bytes4 => address)"
+              },
+              "valueType": {
+                "id": 2506,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "578:7:17",
+                "stateMutability": "nonpayable",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 2511,
+            "name": "funcSignatures",
+            "nodeType": "VariableDeclaration",
+            "scope": 2518,
+            "src": "673:31:17",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_bytes_storage_$dyn_storage",
+              "typeString": "bytes[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 2509,
+                "name": "bytes",
+                "nodeType": "ElementaryTypeName",
+                "src": "673:5:17",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes_storage_ptr",
+                  "typeString": "bytes"
+                }
+              },
+              "id": 2510,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "673:7:17",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_bytes_storage_$dyn_storage_ptr",
+                "typeString": "bytes[]"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 2515,
+            "name": "funcSignatureToIndex",
+            "nodeType": "VariableDeclaration",
+            "scope": 2518,
+            "src": "820:55:17",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_bytes_memory_$_t_uint256_$",
+              "typeString": "mapping(bytes => uint256)"
+            },
+            "typeName": {
+              "id": 2514,
+              "keyType": {
+                "id": 2512,
+                "name": "bytes",
+                "nodeType": "ElementaryTypeName",
+                "src": "828:5:17",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes_storage_ptr",
+                  "typeString": "bytes"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "820:25:17",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_bytes_memory_$_t_uint256_$",
+                "typeString": "mapping(bytes => uint256)"
+              },
+              "valueType": {
+                "id": 2513,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "837:7:17",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 2517,
+            "name": "proxy",
+            "nodeType": "VariableDeclaration",
+            "scope": 2518,
+            "src": "977:13:17",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 2516,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "977:7:17",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 2519,
+        "src": "315:780:17"
+      }
+    ],
+    "src": "0:1096:17"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/rbenheidorn/Documents/NeonDistrict/erc1155-airdropper/erc-1155/contracts/ProxyReceiver/ProxyBaseStorage.sol",
+    "exportedSymbols": {
+      "ProxyBaseStorage": [
+        2518
+      ]
+    },
+    "id": 2519,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2504,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:17"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "////////////////////////////////////////////////////////////////////////////////////////////////",
+        "fullyImplemented": true,
+        "id": 2518,
+        "linearizedBaseContracts": [
+          2518
+        ],
+        "name": "ProxyBaseStorage",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 2508,
+            "name": "delegates",
+            "nodeType": "VariableDeclaration",
+            "scope": 2518,
+            "src": "560:43:17",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_bytes4_$_t_address_$",
+              "typeString": "mapping(bytes4 => address)"
+            },
+            "typeName": {
+              "id": 2507,
+              "keyType": {
+                "id": 2505,
+                "name": "bytes4",
+                "nodeType": "ElementaryTypeName",
+                "src": "568:6:17",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes4",
+                  "typeString": "bytes4"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "560:26:17",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_bytes4_$_t_address_$",
+                "typeString": "mapping(bytes4 => address)"
+              },
+              "valueType": {
+                "id": 2506,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "578:7:17",
+                "stateMutability": "nonpayable",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 2511,
+            "name": "funcSignatures",
+            "nodeType": "VariableDeclaration",
+            "scope": 2518,
+            "src": "673:31:17",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_bytes_storage_$dyn_storage",
+              "typeString": "bytes[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 2509,
+                "name": "bytes",
+                "nodeType": "ElementaryTypeName",
+                "src": "673:5:17",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes_storage_ptr",
+                  "typeString": "bytes"
+                }
+              },
+              "id": 2510,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "673:7:17",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_bytes_storage_$dyn_storage_ptr",
+                "typeString": "bytes[]"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 2515,
+            "name": "funcSignatureToIndex",
+            "nodeType": "VariableDeclaration",
+            "scope": 2518,
+            "src": "820:55:17",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_bytes_memory_$_t_uint256_$",
+              "typeString": "mapping(bytes => uint256)"
+            },
+            "typeName": {
+              "id": 2514,
+              "keyType": {
+                "id": 2512,
+                "name": "bytes",
+                "nodeType": "ElementaryTypeName",
+                "src": "828:5:17",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes_storage_ptr",
+                  "typeString": "bytes"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "820:25:17",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_bytes_memory_$_t_uint256_$",
+                "typeString": "mapping(bytes => uint256)"
+              },
+              "valueType": {
+                "id": 2513,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "837:7:17",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 2517,
+            "name": "proxy",
+            "nodeType": "VariableDeclaration",
+            "scope": 2518,
+            "src": "977:13:17",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 2516,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "977:7:17",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 2519,
+        "src": "315:780:17"
+      }
+    ],
+    "src": "0:1096:17"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.9",
+  "updatedAt": "2020-02-01T17:45:58.428Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {},
+    "notice": "////////////////////////////////////////////////////////////////////////////////////////////////"
+  }
+}

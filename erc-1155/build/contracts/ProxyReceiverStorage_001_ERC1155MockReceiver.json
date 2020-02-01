@@ -1,0 +1,399 @@
+{
+  "contractName": "ProxyReceiverStorage_001_ERC1155MockReceiver",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "shouldReject",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "bytes4"
+        }
+      ],
+      "name": "delegates",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.0+commit.1d4f565a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"shouldReject\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"bytes4\"}],\"name\":\"delegates\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{},\"notice\":\"////////////////////////////////////////////////////////////////////////////////////////////////\"}},\"settings\":{\"compilationTarget\":{\"/Users/rbenheidorn/Documents/NeonDistrict/erc1155-airdropper/erc-1155/contracts/ProxyReceiver/Delegates/DelegatesStorage.sol\":\"ProxyReceiverStorage_001_ERC1155MockReceiver\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/rbenheidorn/Documents/NeonDistrict/erc1155-airdropper/erc-1155/contracts/ProxyReceiver/Delegates/DelegatesStorage.sol\":{\"keccak256\":\"0xa558868846fac9be1251d4f74fd8fad5defa019c0abf93763e7b47dad8f70f01\",\"urls\":[\"bzzr://a95ca4d465b68d618317415897330e64ae2683532522cfe4e897152f21098e16\"]},\"/Users/rbenheidorn/Documents/NeonDistrict/erc1155-airdropper/erc-1155/contracts/ProxyReceiver/ProxyBaseStorage.sol\":{\"keccak256\":\"0xdae495dcda32d7e1bdb41a921f19e21e846a201ff7c4179354f3457a90743cec\",\"urls\":[\"bzzr://15e2da0e06630bcec340c3d0e8bbdba56914c9a1d930ebcee2e52c932ccf835f\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061018c806100206000396000f3fe60806040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680631dbb938114610051578063a0a2daf014610080575b600080fd5b34801561005d57600080fd5b5061006661011a565b604051808215151515815260200191505060405180910390f35b34801561008c57600080fd5b506100d8600480360360208110156100a357600080fd5b8101908080357bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916906020019092919050505061012d565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b600360149054906101000a900460ff1681565b60006020528060005260406000206000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea165627a7a72305820a89a1535b9a1041d2c7e30498f0b9a3f7b0a9bc1eca08dcf3f92d5bd25c54f890029",
+  "deployedBytecode": "0x60806040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680631dbb938114610051578063a0a2daf014610080575b600080fd5b34801561005d57600080fd5b5061006661011a565b604051808215151515815260200191505060405180910390f35b34801561008c57600080fd5b506100d8600480360360208110156100a357600080fd5b8101908080357bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916906020019092919050505061012d565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b600360149054906101000a900460ff1681565b60006020528060005260406000206000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea165627a7a72305820a89a1535b9a1041d2c7e30498f0b9a3f7b0a9bc1eca08dcf3f92d5bd25c54f890029",
+  "sourceMap": "434:395:13:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;434:395:13;;;;;;;",
+  "deployedSourceMap": "434:395:13:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;700:24;;8:9:-1;5:2;;;30:1;27;20:12;5:2;700:24:13;;;;;;;;;;;;;;;;;;;;;;;;;;;560:43:17;;8:9:-1;5:2;;;30:1;27;20:12;5:2;560:43:17;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;560:43:17;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;700:24:13;;;;;;;;;;;;;:::o;560:43:17:-;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.5.0;\n\nimport \"../ProxyBaseStorage.sol\";\n\n///////////////////////////////////////////////////////////////////////////////////////////////////\n/**\n * @title DelegatesStorage\n * @dev Defining storage inheritance for the delegate contract(s).\n *      Note:   This is not the only way to define your storage, DYOR.\n */\n///////////////////////////////////////////////////////////////////////////////////////////////////\n\ncontract ProxyReceiverStorage_001_ERC1155MockReceiver is ProxyBaseStorage {\n\n    //////////////////////////////////////////// VARS /////////////////////////////////////////////\n\n    // Note: if you alter these values in another delegate impl it affects this too\n    bool public shouldReject;\n\n    ///////////////////////////////////////////////////////////////////////////////////////////////\n\n}\n\n///////////////////////////////////////////////////////////////////////////////////////////////////\n\ncontract ProxyReceiverStorage_002_ERCXXXXFuture is ProxyReceiverStorage_001_ERC1155MockReceiver {\n\n    //////////////////////////////////////////// VARS /////////////////////////////////////////////\n\n    bool public shouldRejectXXXX; // var renamed to be specific to prevent clash with parent data version\n\n    ///////////////////////////////////////////////////////////////////////////////////////////////\n\n}\n\n///////////////////////////////////////////////////////////////////////////////////////////////////",
+  "sourcePath": "/Users/rbenheidorn/Documents/NeonDistrict/erc1155-airdropper/erc-1155/contracts/ProxyReceiver/Delegates/DelegatesStorage.sol",
+  "ast": {
+    "absolutePath": "/Users/rbenheidorn/Documents/NeonDistrict/erc1155-airdropper/erc-1155/contracts/ProxyReceiver/Delegates/DelegatesStorage.sol",
+    "exportedSymbols": {
+      "ProxyReceiverStorage_001_ERC1155MockReceiver": [
+        2163
+      ],
+      "ProxyReceiverStorage_002_ERCXXXXFuture": [
+        2168
+      ]
+    },
+    "id": 2169,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2157,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:13"
+      },
+      {
+        "absolutePath": "/Users/rbenheidorn/Documents/NeonDistrict/erc1155-airdropper/erc-1155/contracts/ProxyReceiver/ProxyBaseStorage.sol",
+        "file": "../ProxyBaseStorage.sol",
+        "id": 2158,
+        "nodeType": "ImportDirective",
+        "scope": 2169,
+        "sourceUnit": 2519,
+        "src": "25:33:13",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 2159,
+              "name": "ProxyBaseStorage",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2518,
+              "src": "491:16:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ProxyBaseStorage_$2518",
+                "typeString": "contract ProxyBaseStorage"
+              }
+            },
+            "id": 2160,
+            "nodeType": "InheritanceSpecifier",
+            "src": "491:16:13"
+          }
+        ],
+        "contractDependencies": [
+          2518
+        ],
+        "contractKind": "contract",
+        "documentation": "////////////////////////////////////////////////////////////////////////////////////////////////",
+        "fullyImplemented": true,
+        "id": 2163,
+        "linearizedBaseContracts": [
+          2163,
+          2518
+        ],
+        "name": "ProxyReceiverStorage_001_ERC1155MockReceiver",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 2162,
+            "name": "shouldReject",
+            "nodeType": "VariableDeclaration",
+            "scope": 2163,
+            "src": "700:24:13",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bool",
+              "typeString": "bool"
+            },
+            "typeName": {
+              "id": 2161,
+              "name": "bool",
+              "nodeType": "ElementaryTypeName",
+              "src": "700:4:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 2169,
+        "src": "434:395:13"
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 2164,
+              "name": "ProxyReceiverStorage_001_ERC1155MockReceiver",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2163,
+              "src": "983:44:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ProxyReceiverStorage_001_ERC1155MockReceiver_$2163",
+                "typeString": "contract ProxyReceiverStorage_001_ERC1155MockReceiver"
+              }
+            },
+            "id": 2165,
+            "nodeType": "InheritanceSpecifier",
+            "src": "983:44:13"
+          }
+        ],
+        "contractDependencies": [
+          2163,
+          2518
+        ],
+        "contractKind": "contract",
+        "documentation": "////////////////////////////////////////////////////////////////////////////////////////////////",
+        "fullyImplemented": true,
+        "id": 2168,
+        "linearizedBaseContracts": [
+          2168,
+          2163,
+          2518
+        ],
+        "name": "ProxyReceiverStorage_002_ERCXXXXFuture",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 2167,
+            "name": "shouldRejectXXXX",
+            "nodeType": "VariableDeclaration",
+            "scope": 2168,
+            "src": "1136:28:13",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bool",
+              "typeString": "bool"
+            },
+            "typeName": {
+              "id": 2166,
+              "name": "bool",
+              "nodeType": "ElementaryTypeName",
+              "src": "1136:4:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 2169,
+        "src": "932:409:13"
+      }
+    ],
+    "src": "0:1442:13"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/rbenheidorn/Documents/NeonDistrict/erc1155-airdropper/erc-1155/contracts/ProxyReceiver/Delegates/DelegatesStorage.sol",
+    "exportedSymbols": {
+      "ProxyReceiverStorage_001_ERC1155MockReceiver": [
+        2163
+      ],
+      "ProxyReceiverStorage_002_ERCXXXXFuture": [
+        2168
+      ]
+    },
+    "id": 2169,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2157,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:13"
+      },
+      {
+        "absolutePath": "/Users/rbenheidorn/Documents/NeonDistrict/erc1155-airdropper/erc-1155/contracts/ProxyReceiver/ProxyBaseStorage.sol",
+        "file": "../ProxyBaseStorage.sol",
+        "id": 2158,
+        "nodeType": "ImportDirective",
+        "scope": 2169,
+        "sourceUnit": 2519,
+        "src": "25:33:13",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 2159,
+              "name": "ProxyBaseStorage",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2518,
+              "src": "491:16:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ProxyBaseStorage_$2518",
+                "typeString": "contract ProxyBaseStorage"
+              }
+            },
+            "id": 2160,
+            "nodeType": "InheritanceSpecifier",
+            "src": "491:16:13"
+          }
+        ],
+        "contractDependencies": [
+          2518
+        ],
+        "contractKind": "contract",
+        "documentation": "////////////////////////////////////////////////////////////////////////////////////////////////",
+        "fullyImplemented": true,
+        "id": 2163,
+        "linearizedBaseContracts": [
+          2163,
+          2518
+        ],
+        "name": "ProxyReceiverStorage_001_ERC1155MockReceiver",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 2162,
+            "name": "shouldReject",
+            "nodeType": "VariableDeclaration",
+            "scope": 2163,
+            "src": "700:24:13",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bool",
+              "typeString": "bool"
+            },
+            "typeName": {
+              "id": 2161,
+              "name": "bool",
+              "nodeType": "ElementaryTypeName",
+              "src": "700:4:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 2169,
+        "src": "434:395:13"
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 2164,
+              "name": "ProxyReceiverStorage_001_ERC1155MockReceiver",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2163,
+              "src": "983:44:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ProxyReceiverStorage_001_ERC1155MockReceiver_$2163",
+                "typeString": "contract ProxyReceiverStorage_001_ERC1155MockReceiver"
+              }
+            },
+            "id": 2165,
+            "nodeType": "InheritanceSpecifier",
+            "src": "983:44:13"
+          }
+        ],
+        "contractDependencies": [
+          2163,
+          2518
+        ],
+        "contractKind": "contract",
+        "documentation": "////////////////////////////////////////////////////////////////////////////////////////////////",
+        "fullyImplemented": true,
+        "id": 2168,
+        "linearizedBaseContracts": [
+          2168,
+          2163,
+          2518
+        ],
+        "name": "ProxyReceiverStorage_002_ERCXXXXFuture",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 2167,
+            "name": "shouldRejectXXXX",
+            "nodeType": "VariableDeclaration",
+            "scope": 2168,
+            "src": "1136:28:13",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bool",
+              "typeString": "bool"
+            },
+            "typeName": {
+              "id": 2166,
+              "name": "bool",
+              "nodeType": "ElementaryTypeName",
+              "src": "1136:4:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 2169,
+        "src": "932:409:13"
+      }
+    ],
+    "src": "0:1442:13"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.9",
+  "updatedAt": "2020-02-01T17:45:58.420Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {},
+    "notice": "////////////////////////////////////////////////////////////////////////////////////////////////"
+  }
+}
